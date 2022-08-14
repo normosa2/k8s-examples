@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: replica-set
+  name: nginx-deploy
   labels:
-    app: myreplicaset
+    app: web
     kind: frontend
 spec:
   template:
     metadata:
-      name: my-first-pod
+      name: web
       labels:
-        app: myFirstPod
+        app: assignment
         type: frontend
     spec:
       containers:
         - name: nginx
-          image: nginx
+          image: nginx.alpine
   replicas: 5
   selector:
     matchLabels:
