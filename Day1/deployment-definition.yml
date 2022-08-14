@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: deployment
   labels:
-    app: mydeployment
+    app: web
     kind: frontend
 spec:
   template:
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: nginx
+          image: nginx:stable
   replicas: 5
   selector:
     matchLabels:
